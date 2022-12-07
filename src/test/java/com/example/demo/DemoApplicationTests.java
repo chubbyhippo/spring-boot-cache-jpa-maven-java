@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import static org.awaitility.Awaitility.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureWebTestClient(timeout = "36000")
+@AutoConfigureWebTestClient(timeout = "10000")
 class DemoApplicationTests {
 
     @Autowired
