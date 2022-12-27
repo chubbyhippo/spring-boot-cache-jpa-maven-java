@@ -33,7 +33,7 @@ class StudentServiceTest {
                         new Student(1L, "Dicky")));
 
         var studentDtos = studentService.getStudents();
-        assertThat(studentDtos.size()).isPositive();
+        assertThat(studentDtos).isNotEmpty();
         verify(studentRepository, times(1)).findAll();
 
     }
@@ -50,7 +50,7 @@ class StudentServiceTest {
                         new Student(1L, "Elena")));
 
         List<StudentDto> studentDtos = studentService.addStudent("Elena");
-        assertThat(studentDtos.size()).isPositive();
+        assertThat(studentDtos).isNotEmpty();
         verify(studentRepository, times(1)).save(any(Student.class));
         verify(studentRepository, times(1)).findAll();
     }
