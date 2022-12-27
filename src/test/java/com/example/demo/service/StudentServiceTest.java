@@ -33,7 +33,7 @@ class StudentServiceTest {
                         new Student(1L, "Dicky")));
 
         var studentDtos = studentService.getStudents();
-        assertThat(studentDtos.size()).isGreaterThan(0);
+        assertThat(studentDtos.size()).isPositive();
         verify(studentRepository, times(1)).findAll();
 
     }
@@ -50,7 +50,7 @@ class StudentServiceTest {
                         new Student(1L, "Elena")));
 
         List<StudentDto> studentDtos = studentService.addStudent("Elena");
-        assertThat(studentDtos.size()).isGreaterThan(0);
+        assertThat(studentDtos.size()).isPositive();
         verify(studentRepository, times(1)).save(any(Student.class));
         verify(studentRepository, times(1)).findAll();
     }
